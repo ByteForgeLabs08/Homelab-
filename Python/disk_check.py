@@ -5,7 +5,7 @@ eingabe = input("Festplatten-Füllstand in Prozent:")
 print("Typ der Eingabe:", type(eingabe))
 
 #In Zahl umwandeln:
-fuellstand = int(eingabe)
+fuellstand = float(eingabe)
 print("Typ nach der Umwandlung:", type(fuellstand))
 
 #Vergleich:
