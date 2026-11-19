@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #Füllstände mehrerer Festplatten(erstmal noch von Hand)
-festplatten = [45, 85, 95, 72, 80]
+festplatten = [45, 99, 85, 95, 72, 80]
 
 print("=" * 40)
 print("Festplatten-Check")
