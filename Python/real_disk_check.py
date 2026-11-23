@@ -2,7 +2,7 @@
 import shutil
 
 #Mountpoints, die geprüft werden sollen
-mountpoints =["/"]
+mountpoints =["/", "/boot", "/boot/efi"]
 
 print("=" * 40)
 print("Festplatten-Check (echte Werte)")
