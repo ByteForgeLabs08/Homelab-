@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mariadb
+    container_name: fisi-db01
+    environment:
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - ./db-daten:/var/lib/mysql
+    restart: unless-stopped
+
+  blog:
+    image: wordpress
+    container_name: fisi-blog01
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${WEB_PORT}:80"
+    volumes:
+      - ./wp-daten:/var/www/html
+    restart: unless-stopped
