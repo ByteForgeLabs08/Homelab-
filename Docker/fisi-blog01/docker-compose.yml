@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb
+    image: mariadb:13.0
     container_name: fisi-db01
     environment:
       MARIADB_DATABASE: ${DB_NAME}
@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
 
   blog:
-    image: wordpress
+    image: wordpress:7.1
     container_name: fisi-blog01
     depends_on:
       - db
