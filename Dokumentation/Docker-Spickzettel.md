@@ -59,3 +59,16 @@ IP am Anfang = wer angeklopft hat (Besucher, nicht Container)
 200 = OK, 404 = nicht gefunden, 500 = Serverfehler
 
 [Note] Hinweis, [Warning] Warnung, [ERROR] Fehler
+
+
+##Docker- Netzwerke
+----------------------------------------------------------------------------------------------------------------
+
+docker network ls			#alle Netze
+docker network inspect<netz> | grep -E "Name|Subnet|Gateway|IPv4Address"
+docker exec <container> getent host <name> #DNS-Test
+
+-Jedes Compose-Projekt bekommt eigenes Netz: <ordner>_default
+-Gateway .1 = die VM, Contaqiner bekommen .2, .3 ...
+IPs können sich ändern -> immer den Dienstnamen nutzen(z.b db)
+-Container finden sich nur im selben Netz (eigenes DNS pro Netz)

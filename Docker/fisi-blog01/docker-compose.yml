@@ -26,3 +26,6 @@ services:
     volumes:
       - ./wp-daten:/var/www/html
     restart: unless-stopped
+networks:
+  default:
+    name: fisi-blog01-net
